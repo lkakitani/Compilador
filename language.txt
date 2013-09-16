@@ -1,0 +1,26 @@
+Q := 0, 1coment, coment, blank, number, variable, ;, +, -, *, /, {, }, (, ), >, =, <, ,, ., !, ==, =>, =<, !=@
+S := a-z, A-Z, 0-9, ;, +, -, *, /, {, }, (, ), >, =, <, ,, .,  , \n, \t@
+P := (0, \) -> 1coment; (1coment, \) -> coment; (1coment, a-z) -> 1coment; (1coment, A-Z) -> 1coment; (1coment, 0-9) -> 1coment; (1coment,  ) -> 1coment; (1coment, .) -> 1coment; (1coment, ,) -> 1coment; 
+(0,  ) -> blank; (blank,  ) -> blank; (0, \t) -> blank; (blank, \t) -> blank; (0, \n) -> blank; (blank, \n) -> blank; 
+(0, 0-9) -> number; (number, 0-9) -> number; 
+(0, a-z) -> variable; (0, A-Z) -> variable; (variable, a-z) -> variable; (variable, A-Z) -> variable; (variable, 0-9) -> variable; 
+(0, ;) -> ;; 
+(0, +) -> +; 
+(0, -) -> -; 
+(0, *) -> *; 
+(0, ,) -> ,; 
+(0, /) -> /; 
+(0, {) -> {; 
+(0, }) -> }; 
+(0, () -> (; 
+(0, )) -> ); 
+(0, >) -> >; 
+(0, =) -> =; 
+(0, <) -> <; 
+(0, .) -> .; 
+(=, =) -> ==; 
+(=, <) -> =<; 
+(=, >) -> =>; 
+(0, !) -> !; (!, =) -> !=@
+q0 := 0@
+F := coment, blank, number, variable, ;, +, -, *, /, {, }, (, ), >, =, <, ,, ., ==, =>, =<, !=@
